@@ -1,0 +1,342 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    background: #202731;
+    overflow-x: hidden;
+    /* overflow-x property allow us to hide the content */    
+}
+
+body a {
+    color: white;
+    text-decoration: none;
+}
+
+body li {
+    list-style: none;
+}
+
+/* LOADING SCREEN */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    background-color: #202731;
+    animation: end-load 3s ease-out both;
+}
+
+@-webkit-keyframes end-load {
+    0%{
+        opacity: 1;
+    }
+    99%{
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+@keyframes end-load {
+    0%{
+        opacity: 1;
+    }
+    99%{
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+#loading {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 3px solid transparent;
+    border-top-color:#3c31dd;
+    border-radius: 50%;
+    z-index: 50;
+    animation: spin 2s linear infinite;
+}
+
+#loading::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 3px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation : spin 3s linear infinite
+}
+
+#loading::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 3px solid transparent;
+    border-top-color: #ff0066;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0%{
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%{
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+#logo {
+    margin-top: 17px;
+}
+
+#logo span {
+    font-weight: bold;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav li:hover {
+    font-weight: bold;
+}
+
+/* SECTION */
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 400px; */
+    height: 100vh;
+    padding: 100px 20vw 0 20vw;
+    /*Viewport width will give me a design a little bit more responsive*/
+    opacity: 0;
+    animation: fadeIn linear 1.75s forwards;
+    animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#aboutme {
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(/images/background2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#aboutme h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+#aboutme h2 {
+    font-size: 45px;
+    margin-bottom: 75px;
+}
+
+.intro {
+    display: flex;
+}
+
+.intro img {
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.intro p {
+    font-size: 25px;
+    /* text-align: center; */
+    margin-left: 30px;
+    width: 750px;
+}
+
+#projects {
+    padding-top: 200px;
+    cursor: default;
+    height: 100vh;
+}
+
+#projects h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+#projects p {
+    font-size: 25px;
+}
+
+#projects p:hover {
+    font-weight: bold;
+}
+
+#contact h1 {
+    font-size: 40px;
+}
+
+#contact a {
+    font-size: 25px;
+}
+
+.blue {
+    background: #3c31dd;
+}
+
+.red {
+    background: #dd3f31;
+}
+
+.pink {
+    background: #ff0066
+}
+
+.dark {
+    background: #0f0f10
+}
+
+/* Curved background */
+
+.curve {
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    bottom: 0;
+}
+
+.curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    /*2 values in a border radius create an ellipse*/
+    width: 55%;
+    height: 100%;
+    background-color: #202731;
+    transform: translate(85%, 60%);
+}
+
+.curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    /*2 values in a border radius create an ellipse*/
+    width: 55%;
+    height: 100%;
+    background-color: #3c31dd;
+    transform: translate(-4%, 40%);
+    z-index: -1;
+}
+
+/* Wave background with SVG via https://www.shapedivider.app/ */
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(103% + 1.3px);
+    height: 262px;
+}
+
+.wave .shape-fill {
+    fill: #202731;
+}
+
+/* Animated blob */
+.flip {
+    transform: rotate(180deg);
+}
+
+.blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
+    z-index: -1;
+  }
+
+  .blob-content {
+    z-index: -2;
+  }
+
+  .blobs {
+    width: 100%;
+    background: url('./blobs.svg') no-repeat bottom / cover;
+  }
