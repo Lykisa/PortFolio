@@ -16,9 +16,28 @@ body li {
     list-style: none;
 }
 
-/* LOADING SCREEN */
+/* --------------- VARIABLES --------------- */
 
-#loading-screen {
+.container {
+    padding: 10px 10%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sub-title {
+    font-size: 55px;
+    font-weight: 600;
+}
+
+/* --------------- LOADING SCREEN --------------- */
+
+/* A RAJOUTER POUR L'ANIMATION DE CHARGEMENT */
+
+/* #loading-screen {
     position: fixed;
     top: 0;
     left: 0;
@@ -129,9 +148,9 @@ body li {
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}
+} */
 
-/* HEADER */
+/* --------------- HEADER --------------- */
 
 header {
     display: flex;
@@ -165,7 +184,7 @@ nav li:hover {
     font-weight: bold;
 }
 
-/* SECTION */
+/* --------------- SECTION --------------- */
 
 section {
     position: relative;
@@ -176,19 +195,25 @@ section {
     height: 100vh;
     padding: 100px 20vw 0 20vw;
     /*Viewport width will give me a design a little bit more responsive*/
-    opacity: 0;
+
+    /* A RAJOUTER POUR L'ANIMATION DE CHARGEMENT */
+
+    /* opacity: 0;
     animation: fadeIn linear 1.75s forwards;
-    animation-delay: 3s;
+    animation-delay: 3s; */
 }
 
-@keyframes fadeIn {
+/* A RAJOUTER POUR L'ANIMATION DE CHARGEMENT */
+
+/* @keyframes fadeIn {
     0%{
         opacity: 0;
     }
     100%{
         opacity: 1;
     }
-}
+} */
+
 
 #aboutme {
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(/images/background2.jpg);
@@ -224,8 +249,11 @@ section {
 
 #projects {
     padding-top: 200px;
+    /* margin-bottom: 50px; */
     cursor: default;
+    height: 200vh;
     height: 100vh;
+    padding: 100px 20vw 0 20vw;
 }
 
 #projects h1 {
@@ -233,21 +261,307 @@ section {
     text-align: center;
 }
 
-#projects p {
+#projects h2 {
     font-size: 25px;
+    text-decoration: underline;
 }
 
-#projects p:hover {
+#projects h2:hover {
     font-weight: bold;
 }
 
-#contact h1 {
+.project_description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project_description p {
+    text-align: center;
+    font-style: italic;
+    padding-top: 90px;
+    margin-left: 30px;
+}
+
+/* #projects img {
+    width: 125px;
+    height: 200px;
+    margin-left: 10px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: 0%;
+    /* transform-origin: 100% 100%; */
+    /* transition: all 1s ease-in-out; 
+} */
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    height: 400px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #3c31dd);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    margin-bottom: 20px;
+}
+
+.layer p {
+    font-size: 12px
+}
+
+.layer a {
+    margin-top: 00px;
+    text-decoration: none;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* --------------- Slideshow container --------------- */
+
+.slide-containder {
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* #projects img:hover {
+    width: 80%;
+    height: 80%;
+    max-height: 2000px;
+} */
+
+
+/* --------------- CONTACT ---------------  */
+
+/* #contact h1 {
     font-size: 40px;
 }
 
 #contact a {
     font-size: 25px;
+} */
+
+.contact-left {
+    flex-basis: 35%;
 }
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i{
+    color: #202731;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #202731;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: white;
+    transform: translateY(-5px);
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #202731;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.5s;
+}
+
+/* .btn2:hover {
+    background-color: #202731;
+    color: #ff0066; 
+} */
+
+.btn.btn2 {
+    display: inline-block;
+    background-color: #202731;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-right form {
+    width: 100%;
+    margin: 45px 0;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #202731;
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    font-family: 'Raleway', sans-serif;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+
+/* --------------- COLORS --------------- */
 
 .blue {
     background: #3c31dd;
@@ -258,14 +572,18 @@ section {
 }
 
 .pink {
-    background: #ff0066
+    background: #ff0066;
 }
 
 .dark {
-    background: #0f0f10
+    background: #0f0f10;
 }
 
-/* Curved background */
+.gray {
+    background: #333233;
+}
+
+/* --------------- Curved background --------------- */
 
 .curve {
     position: absolute;
@@ -321,7 +639,7 @@ section {
     fill: #202731;
 }
 
-/* Animated blob */
+/* --------------- Animated blob --------------- */
 .flip {
     transform: rotate(180deg);
 }
@@ -340,3 +658,20 @@ section {
     width: 100%;
     background: url('./blobs.svg') no-repeat bottom / cover;
   }
+
+
+ /* --------------- FOOTER ---------------  */
+
+.copyright {
+   width: 100%;
+   text-align: center;
+   padding: 25px 0;
+   background: #262626;
+   font-weight: 300;
+   margin-top: 20px;
+}
+
+.copyright i {
+    color: #ff0066;
+}
+
