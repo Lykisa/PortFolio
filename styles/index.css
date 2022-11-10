@@ -37,7 +37,7 @@ body li {
 
 /* A RAJOUTER POUR L'ANIMATION DE CHARGEMENT */
 
-/* #loading-screen {
+#loading-screen {
     position: fixed;
     top: 0;
     left: 0;
@@ -148,7 +148,7 @@ body li {
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-} */
+}
 
 /* --------------- HEADER --------------- */
 
@@ -198,21 +198,21 @@ section {
 
     /* A RAJOUTER POUR L'ANIMATION DE CHARGEMENT */
 
-    /* opacity: 0;
+    opacity: 0;
     animation: fadeIn linear 1.75s forwards;
-    animation-delay: 3s; */
+    animation-delay: 3s;
 }
 
 /* A RAJOUTER POUR L'ANIMATION DE CHARGEMENT */
 
-/* @keyframes fadeIn {
+@keyframes fadeIn {
     0%{
         opacity: 0;
     }
     100%{
         opacity: 1;
     }
-} */
+}
 
 
 #aboutme {
